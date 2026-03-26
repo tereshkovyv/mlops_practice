@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/tereshkovyv/mlops_practice'
+                git 'https://github.com/tereshkovyv/mlops_practice/tree/ksenia-lab1'
             }
         }
 
