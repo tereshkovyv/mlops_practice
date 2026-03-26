@@ -1,10 +1,42 @@
 pipeline {
     agent any
+
     stages {
-     stage('Hello') {
-                steps {
-                    echo 'Hello world'
-                }
+
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/tereshkovyv/mlops_practice'
             }
-     }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install -r lab2/requirements.txt'
+            }
+        }
+
+        stage('Download Data') {
+            steps {
+                sh 'python lab2/scripts/data_download.py'
+            }
+        }
+
+        stage('Preprocess Data') {
+            steps {
+                sh 'python lab2/scripts/data_preprocessing.py'
+            }
+        }
+
+        stage('Train Model') {
+            steps {
+                sh 'python lab2/scripts/train_model.py'
+            }
+        }
+
+        stage('Evaluate Model') {
+            steps {
+                sh 'python lab2/scripts/evaluate_model.py'
+            }
+        }
+    }
 }
