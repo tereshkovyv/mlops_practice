@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git branch: 'ksenia-labl', url: 'https://github.com/tereshkovyy/mlops_practice.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install -r lab2/requirements.txt'
+            }
+        }
+
+        stage('Download Data') {
+            steps {
+                sh 'python lab2/scripts/data_download.py'
+            }
+        }
+
+        stage('Preprocess Data') {
+            steps {
+                sh 'python lab2/scripts/data_preprocessing.py'
+            }
+        }
+
+        stage('Train Model') {
+            steps {
+                sh 'python lab2/scripts/train_model.py'
+            }
+        }
+
+        stage('Evaluate Model') {
+            steps {
+                sh 'python lab2/scripts/evaluate_model.py'
+            }
+        }
+    }
+}
