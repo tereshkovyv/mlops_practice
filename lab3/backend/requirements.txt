@@ -1,0 +1,5 @@
+Flask==2.*
+Flask-Cors==4.*
+Pillow==11.*
+numpy==1.*
+tensorflow==2.*

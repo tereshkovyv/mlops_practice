@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <span>AI-powered image classification</span>
+            <h1>Загрузите фото и узнайте, что на нем</h1>
+            <p>Модель EfficientNetB0 предскажет топ-3 класса изображения. Просто выберите файл и нажмите «Распознать».</p>
+        </header>
+
+        <section class="card">
+            <form id="uploadForm" class="upload-box">
+                <label for="fileInput">
+                    <strong>Нажми сюда или перетащи файл</strong>
+                    <span>Поддерживаются JPG, PNG, GIF. Максимум — одно изображение.</span>
+                    <input type="file" id="fileInput" accept="image/*" required>
+                </label>
+                <button type="submit">Распознать изображение</button>
+            </form>
+
+            <div id="results" class="results"></div>
+        </section>
+
+        <footer>
+            <p>Крутой молодежный стиль и быстрая классификация на Flask + JavaScript.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
