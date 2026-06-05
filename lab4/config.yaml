@@ -1,0 +1,6 @@
+paths:
+  raw_data: "lab4/lab4/penguins.csv"
+  processed_data: "lab4/lab4/penguins.csv"
+
+features:
+  target_cols: ['species', 'sex', 'body_mass_g']
